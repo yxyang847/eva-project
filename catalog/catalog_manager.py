@@ -299,6 +299,19 @@ class CatalogManager(object):
         metadata_id = self._dataset_service.dataset_by_name(table_name)
         return self._dataset_service.delete_dataset_by_id(metadata_id)
 
+    def delete_metadata_new(self, metadata_id: int) -> bool:
+        """
+        This method deletes the table along with its columns from df_metadata
+        and df_columns respectively
+
+        Arguments:
+           table_name: table name to be deleted.
+
+        Returns:
+           True if successfully deleted else False
+        """
+        return self._dataset_service.delete_dataset_by_id(metadata_id) 
+
     def delete_udf(self, udf_name: str) -> bool:
         """
         This method drops the udf entry from the catalog

@@ -56,8 +56,13 @@ class DeleteExecutor(AbstractExecutor):
         #     data_tuple.append(val)
 
         # batch = Batch.merge_column_wise(data_tuple)
-        metadata = CatalogManager().get_metadata(video_id)
+        #metadata = CatalogManager().get_metadata(video_id)
         # verify value types are consistent
+        print("\n\n\n\n")
+        print(video_id)
+        print("\n\n\n\n")
+
+        CatalogManager().delete_metadata_new(video_id)
 
         # batch.frames = SchemaUtils.petastorm_type_cast(
         #     metadata.schema.petastorm_schema, batch.frames)
